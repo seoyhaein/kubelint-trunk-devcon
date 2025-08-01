@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
+  "name": "Kubelint-Trunk-Devcon",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git": "latest",
+    // Trunk Launcher 설치
+    "ghcr.io/trunk-io/devcontainer-feature/trunk": "latest"
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached",
+  "workspaceFolder": "/app",
+   "customizations": {
+    "vscode": {
+      "extensions": [
+        "trunkio.vscode-trunk"
+      ]
+    }
+  },
+   "remoteUser": "vscode"
+}
