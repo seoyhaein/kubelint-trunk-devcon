@@ -58,4 +58,5 @@ kubectl delete pod stress-1 -n demo-namespace
 # pod 내용 보기
 kubectl describe pod stress-1 -n demo-namespace
 
+# 향후 deployment 를 이용하는 것을 확장해나가자.
 ```
