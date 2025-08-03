@@ -8,6 +8,3 @@ user_trunk.yaml
 user.yaml
 tmp
 trunk.yaml
-.hadolint.yaml
-.markdownlint.yaml
-.yamllint.yaml
