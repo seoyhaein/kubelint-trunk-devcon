@@ -12,12 +12,10 @@
   },
   "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached",
   "workspaceFolder": "/app",
-   "customizations": {
+  "customizations": {
     "vscode": {
-      "extensions": [
-        "trunkio.vscode-trunk"
-      ]
+      "extensions": ["trunkio.vscode-trunk"]
     }
   },
-   "remoteUser": "vscode"
+  "remoteUser": "vscode"
 }

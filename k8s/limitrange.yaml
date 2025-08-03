@@ -5,13 +5,13 @@ metadata:
   namespace: demo-namespace
 spec:
   limits:
-  - type: Container
-    default:
-      cpu: 300m
-      memory: 256Mi
-    defaultRequest:
-      cpu: 100m
-      memory: 128Mi
-    maxLimitRequestRatio:
-      cpu: "2"
-      memory: "2"
+    - type: Container
+      default:
+        cpu: 300m
+        memory: 256Mi
+      defaultRequest:
+        cpu: 100m
+        memory: 128Mi
+      maxLimitRequestRatio:
+        cpu: "2"
+        memory: "2"

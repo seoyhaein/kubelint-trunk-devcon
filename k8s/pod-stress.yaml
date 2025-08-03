@@ -5,13 +5,13 @@ metadata:
   namespace: demo-namespace
 spec:
   containers:
-  - name: app
-    image: ghcr.io/seoyhaein/stress_app:v1
-    args: ["--mem", "200", "--cpu", "1"]  # 200Mi 메모리, 1 goroutine
-    resources:
-      requests:
-        cpu: 200m
-        memory: 200Mi
-      limits:
-        cpu: 400m
-        memory: 300Mi
+    - name: app
+      image: ghcr.io/seoyhaein/stress_app:v1
+      args: ["--mem", "200", "--cpu", "1"] # 200Mi 메모리, 1 goroutine
+      resources:
+        requests:
+          cpu: 200m
+          memory: 200Mi
+        limits:
+          cpu: 400m
+          memory: 300Mi

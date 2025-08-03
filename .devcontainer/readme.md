@@ -31,7 +31,7 @@ trunk check enable kube-linter
 # 이후 린팅을 하면 됨.
 trunk check
 
-# 테스트로 kind-demo-cluster.yaml 을 넣어두었는데 
+# 테스트로 kind-demo-cluster.yaml 을 넣어두었는데
 
 → Apply formatting (Y/n/all/none): all
 
@@ -40,9 +40,10 @@ trunk check
      |       - hostPath: /mnt/kind-demo # 호스트 디렉터리
      |         containerPath: /mnt/kind-demo # 노드 컨테이너 안 경로
 
-# 위와 같이 주석에 대한 조정을 해주었다.     
+# 위와 같이 주석에 대한 조정을 해주었다.
 
 ```
 
 ### TODO
+
 - 최적화 필요.

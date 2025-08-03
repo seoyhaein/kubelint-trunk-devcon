@@ -1,11 +1,11 @@
 ### 기억용.
 
-- kubectl, helm 같은 경우는 별도의 컨테이너로 동작하게 하였다.  
-- ~/.kube/config 파일을 사용하도록 하였다. 향후 복잡해져서 지울려면 여기서 지우면된다. (context, user, cluster)  
+- kubectl, helm 같은 경우는 별도의 컨테이너로 동작하게 하였다.
+- ~/.kube/config 파일을 사용하도록 하였다. 향후 복잡해져서 지울려면 여기서 지우면된다. (context, user, cluster)
 
 ```bash
 # 클러스터 만들어두기
-kind create cluster --name demo-cluster --config infra/kind/kind-demo-cluster.yaml 
+kind create cluster --name demo-cluster --config infra/kind/kind-demo-cluster.yaml
 
 # 클러스터 확인
 kubectl get nodes
@@ -14,13 +14,13 @@ kubectl get nodes
 kubectl apply -f k8s/namespace.yaml
 
 # 네임스페이스 확인
-kubectl get ns 
+kubectl get ns
 # 또는
 kubectl get namespace
 
 # rq 적용, 여기서는 내부적으로 namespace 를 적용했다. namespace 이름은 'demo-namespace' 이다.
 kubectl apply -f k8s/resourcequota.yaml
-# 또는 
+# 또는
 #kubectl apply -f k8s/resourcequota.yaml -n namespace name
 
 # 목록 조회
@@ -37,7 +37,7 @@ kubectl get resourcequota -n demo-namespace
 # lr 적용하기
 kubectl apply -f k8s/limitrange.yaml
 
-# 또는 
+# 또는
 # kubectl apply -f k8s/limitrange.yaml -n demo-namespace
 
 # 목록 조회
