@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ResourceQuota
 metadata:
   name: rq-small
-  namespace: demo-namespace
+  namespace: demo
 spec:
   hard:
     requests.cpu: "500m"
