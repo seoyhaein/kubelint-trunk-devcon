@@ -1,0 +1,29 @@
+# k8s/apps/stress-app/deployment/base/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stress-app
+  namespace: demo
+  labels:
+    app: stress-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stress-app
+  template:
+    metadata:
+      labels:
+        app: stress-app
+    spec:
+      containers:
+        - name: app
+          image: ghcr.io/seoyhaein/stress_app:v1
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"

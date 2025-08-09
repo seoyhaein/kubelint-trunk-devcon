@@ -1,0 +1,51 @@
+# k8s/apps/stress-app/deployment/others/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stress-app
+  namespace: demo
+  labels:
+    app: stress-app
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  minReadySeconds: 5
+  progressDeadlineSeconds: 300
+
+  selector:
+    matchLabels:
+      app: stress-app
+
+  template:
+    metadata:
+      labels:
+        app: stress-app
+    spec:
+      containers:
+      - name: app
+        image: ghcr.io/seoyhaein/stress_app:v1
+
+        # (1) 느린 기동 보호
+        startupProbe:
+          exec:
+            command: ["sh","-c","kill -0 1"]
+          periodSeconds: 3
+          failureThreshold: 40
+
+        # (2) 생존성
+        livenessProbe:
+          exec:
+            command: ["sh","-c","kill -0 1"]
+          periodSeconds: 10
+          failureThreshold: 3
+
+        # (3) (옵션) 롤아웃 게이팅
+        readinessProbe:
+          exec:
+            command: ["sh","-c","test -r /proc/1/comm && grep -qx stress_app /proc/1/comm"]
+          periodSeconds: 5
+          failureThreshold: 5
