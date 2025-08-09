@@ -66,3 +66,5 @@ kubectl describe pod stress-1 -n demo
 
 # 향후 deployment 를 이용하는 것을 확장해나가자.
 ```
+### TODO
+- kubectl, helm 컨테이너 여기에 두자. 지금 에러 발생하는데, 일단 이거 해결하자. 이미지 업데이트 해서 에러난건지, 설정 문제인지 확인하자.
