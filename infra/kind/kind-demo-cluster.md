@@ -6,6 +6,7 @@
 
 ### 오류 대응
 - kind 안될때
+- 현재 문제 있음  
 
 ```bash
  kind create cluster --name demo-cluster --config infra/kind/kind-demo-cluster.yaml --image kindest/node:v1.31.9 --wait 5m --retain
@@ -16,4 +17,5 @@
  # 지금 문제는 context 가 해당 클러스터에 설정이 안되어 있었다. kubectl 컨테이너를 사용하고 있는데 설정의 문제가 있었다. 일단 해당 컨테이너는 수정하지 않음.
  # 신기한데 잘되다가 갑자기 이런는데, 이건 나중에 보자. 시간날때 왜 그랬는지...
  kind export kubeconfig --name kind-demo-cluster --kubeconfig ~/.kube/config
+
 ```
